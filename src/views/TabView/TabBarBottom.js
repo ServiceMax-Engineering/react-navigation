@@ -2,6 +2,8 @@
 
 import React, { PureComponent } from 'react';
 import { Animated, TouchableWithoutFeedback, StyleSheet } from 'react-native';
+
+import getTestIDProps from 'utils/testid';
 import TabBarIcon from './TabBarIcon';
 
 import type {
@@ -150,6 +152,7 @@ export default class TabBarBottom
           return (
             <TouchableWithoutFeedback
               key={route.key}
+              {...getTestIDProps(`TEST_ID_${route.key}`)}
               onPress={() => jumpToIndex(index)}
             >
               <Animated.View
